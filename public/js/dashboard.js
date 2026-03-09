@@ -1,6 +1,6 @@
-// ── dashboard.js – Analytics dashboard with Chart.js ─────────────────────────
+﻿// -- dashboard.js - Analytics dashboard with live Chart.js refresh -----------
 
-// ── Chart.js global defaults ──────────────────────────────────────────────────
+// -- Chart.js global defaults -------------------------------------------------
 Chart.defaults.color          = '#94a3b8';
 Chart.defaults.borderColor    = 'rgba(148,163,184,0.1)';
 Chart.defaults.font.family    = 'Inter, system-ui, sans-serif';
@@ -8,34 +8,52 @@ Chart.defaults.font.size      = 12;
 
 const PALETTE = ['#6366f1','#06b6d4','#8b5cf6','#ec4899','#ef4444','#f59e0b','#10b981','#3b82f6'];
 
-// ── Load and render all dashboard data ───────────────────────────────────────
-async function loadDashboard() {
+// persist chart instances + previous stats for diff-animations
+const _charts    = {};
+let   _prevStats = {};
+const REFRESH_INTERVAL = 30000; // 30 s
+
+// -- Load / refresh all dashboard data ----------------------------------------
+async function loadDashboard(isRefresh) {
   try {
     const res  = await fetch('/api/skills/dashboard');
     if (!res.ok) throw new Error(`HTTP ${res.status}`);
     const data = await res.json();
 
-    renderStats(data.stats);
-    renderTrendingChart(data.trending);
-    renderCategoryChart(data.categoryDist);
-    renderDifficultyChart(data.diffDist);
-    renderViewsChart(data.mostViewed);
+    renderStats(data.stats, isRefresh);
+
+    if (!isRefresh) {
+      renderTrendingChart(data.trending);
+      renderCategoryChart(data.categoryDist);
+      renderDifficultyChart(data.diffDist);
+      renderViewsChart(data.mostViewed);
+    } else {
+      updateTrendingChart(data.trending);
+      updateViewsChart(data.mostViewed);
+    }
+
     renderTrendingTable(data.trending);
     renderPopularResources(data.popularResources);
+    updateLastRefreshed();
   } catch (err) {
     console.error('Dashboard load failed:', err);
   }
 }
 
-// ── Animated counter helper ────────────────────────────────────────────────
-function animateCount(el, target, duration, suffix, useLocale) {
+function updateLastRefreshed() {
+  const el = document.getElementById('lastRefreshed');
+  if (el) el.textContent = 'Updated ' + new Date().toLocaleTimeString();
+}
+
+// -- Animated counter (from -> target) ----------------------------------------
+function animateCount(el, from, target, duration, suffix, useLocale) {
   if (!el) return;
   const steps = 42;
   let step = 0;
   const timer = setInterval(() => {
     step++;
     const eased = 1 - Math.pow(1 - step / steps, 3);
-    const val = Math.round(target * eased);
+    const val   = Math.round(from + (target - from) * eased);
     el.textContent = useLocale ? val.toLocaleString() + suffix : val + suffix;
     if (step >= steps) {
       el.textContent = useLocale ? target.toLocaleString() + suffix : target + suffix;
@@ -44,20 +62,50 @@ function animateCount(el, target, duration, suffix, useLocale) {
   }, duration / steps);
 }
 
-// ── Stat Cards ─────────────────────────────────────────────────────────────
-function renderStats(stats) {
+// -- Stat Cards ----------------------------------------------------------------
+function renderStats(stats, isRefresh) {
   if (!stats) return;
-  animateCount(document.getElementById('statTotal'),     stats.totalSkills,    800, '',  false);
-  animateCount(document.getElementById('statAvgPop'),    stats.avgPopularity,  900, '%', false);
-  animateCount(document.getElementById('statViews'),     stats.totalViews,    1100, '',  true);
-  animateCount(document.getElementById('statResources'), stats.totalResources, 800, '',  false);
+  const prev = isRefresh ? _prevStats : {};
+  animateCount(document.getElementById('statTotal'),     prev.totalSkills    || 0, stats.totalSkills,     800, '',   false);
+  animateCount(document.getElementById('statAvgPop'),    prev.avgPopularity  || 0, stats.avgPopularity,   900, '%',  false);
+  animateCount(document.getElementById('statViews'),     prev.totalViews     || 0, stats.totalViews,     1100, '',   true);
+  animateCount(document.getElementById('statResources'), prev.totalResources || 0, stats.totalResources,  800, '',   false);
+
+  if (isRefresh) {
+    document.querySelectorAll('.stat-card').forEach((card, i) => {
+      const keys = ['totalSkills', 'avgPopularity', 'totalViews', 'totalResources'];
+      if (stats[keys[i]] !== prev[keys[i]]) {
+        card.classList.add('stat-updated');
+        setTimeout(() => card.classList.remove('stat-updated'), 1200);
+      }
+    });
+  }
+  _prevStats = { ...stats };
 }
 
-// ── Trending Skills Bar Chart ──────────────────────────────────────────────
+// -- Chart live-update helpers -------------------------------------------------
+function updateTrendingChart(trending) {
+  const chart = _charts.trending;
+  if (!chart || !trending) return;
+  chart.data.labels           = trending.map(s => shorten(s.name, 15));
+  chart.data.datasets[0].data = trending.map(s => s.trendScore);
+  chart.update('active');
+}
+
+function updateViewsChart(mostViewed) {
+  const chart = _charts.views;
+  if (!chart || !mostViewed) return;
+  chart.data.labels           = mostViewed.map(s => shorten(s.name, 15));
+  chart.data.datasets[0].data = mostViewed.map(s => s.views);
+  chart.update('active');
+}
+
+// -- Trending Skills Bar Chart -------------------------------------------------
 function renderTrendingChart(trending) {
   const ctx = document.getElementById('trendingChart');
   if (!ctx || !trending) return;
-  new Chart(ctx, {
+  if (_charts.trending) _charts.trending.destroy();
+  _charts.trending = new Chart(ctx, {
     type: 'bar',
     data: {
       labels: trending.map(s => shorten(s.name, 15)),
@@ -90,13 +138,14 @@ function renderTrendingChart(trending) {
   });
 }
 
-// ── Category Distribution Pie Chart ───────────────────────────────────────
+// -- Category Distribution Pie Chart ------------------------------------------
 function renderCategoryChart(categoryDist) {
   const ctx = document.getElementById('categoryChart');
   if (!ctx || !categoryDist) return;
+  if (_charts.category) _charts.category.destroy();
   const labels = Object.keys(categoryDist);
   const data   = Object.values(categoryDist);
-  new Chart(ctx, {
+  _charts.category = new Chart(ctx, {
     type: 'pie',
     data: {
       labels,
@@ -117,11 +166,12 @@ function renderCategoryChart(categoryDist) {
   });
 }
 
-// ── Difficulty Doughnut Chart ────────────────────────────────────────────
+// -- Difficulty Doughnut Chart -------------------------------------------------
 function renderDifficultyChart(diffDist) {
   const ctx = document.getElementById('difficultyChart');
   if (!ctx || !diffDist) return;
-  new Chart(ctx, {
+  if (_charts.difficulty) _charts.difficulty.destroy();
+  _charts.difficulty = new Chart(ctx, {
     type: 'doughnut',
     data: {
       labels: ['Beginner', 'Intermediate', 'Advanced'],
@@ -143,11 +193,12 @@ function renderDifficultyChart(diffDist) {
   });
 }
 
-// ── Most Viewed Horizontal Bar Chart ────────────────────────────────────
+// -- Most Viewed Horizontal Bar Chart -----------------------------------------
 function renderViewsChart(mostViewed) {
   const ctx = document.getElementById('viewsChart');
   if (!ctx || !mostViewed) return;
-  new Chart(ctx, {
+  if (_charts.views) _charts.views.destroy();
+  _charts.views = new Chart(ctx, {
     type: 'bar',
     data: {
       labels: mostViewed.map(s => shorten(s.name, 15)),
@@ -181,7 +232,7 @@ function renderViewsChart(mostViewed) {
   });
 }
 
-// ── Trending Table ───────────────────────────────────────────────────────
+// -- Trending Table ------------------------------------------------------------
 function renderTrendingTable(trending) {
   const tbody = document.getElementById('trendingTable');
   if (!tbody || !trending) return;
@@ -194,7 +245,7 @@ function renderTrendingTable(trending) {
   `).join('');
 }
 
-// ── Popular Resources List ───────────────────────────────────────────────
+// -- Popular Resources List ----------------------------------------------------
 function renderPopularResources(resources) {
   const container = document.getElementById('popularResources');
   if (!container || !resources) return;
@@ -213,12 +264,12 @@ function renderPopularResources(resources) {
   }).join('');
 }
 
-// ── Helper ───────────────────────────────────────────────────────────────
+// -- Helper -------------------------------------------------------------------
 function shorten(str, len) {
-  return str.length > len ? str.substring(0, len) + '…' : str;
+  return str.length > len ? str.substring(0, len) + '...' : str;
 }
 
-// ── Page exit transition ─────────────────────────────────────────────────
+// -- Page exit transition -----------------------------------------------------
 document.addEventListener('click', e => {
   const link = e.target.closest('a[href]');
   if (!link) return;
@@ -230,5 +281,8 @@ document.addEventListener('click', e => {
   setTimeout(() => { window.location.href = href; }, 185);
 });
 
-// ── Init ─────────────────────────────────────────────────────────────────
-document.addEventListener('DOMContentLoaded', loadDashboard);
+// -- Init ---------------------------------------------------------------------
+document.addEventListener('DOMContentLoaded', () => {
+  loadDashboard(false);
+  setInterval(() => loadDashboard(true), REFRESH_INTERVAL);
+});

@@ -181,6 +181,26 @@ router.get('/suggest', (req, res) => {
   }
 });
 
+// POST /api/skills/:id/star  — toggles star (body: { action: 'star'|'unstar' })
+router.post('/:id/star', (req, res) => {
+  try {
+    const skills = load();
+    const idx = skills.findIndex(s => String(s.id) === String(req.params.id));
+    if (idx === -1) return res.status(404).json({ error: 'Skill not found' });
+    const action = (req.body && req.body.action) || 'star';
+    if (action === 'unstar') {
+      skills[idx].popularity = Math.max(0, (skills[idx].popularity || 0) - 1);
+    } else {
+      skills[idx].popularity = (skills[idx].popularity || 0) + 1;
+    }
+    save(skills);
+    res.json({ popularity: skills[idx].popularity, action });
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ error: 'Failed to toggle star' });
+  }
+});
+
 // GET /api/skills/:id
 router.get('/:id', (req, res) => {
   try {

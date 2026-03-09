@@ -200,6 +200,8 @@ function renderDetail(skill) {
   const detailId = Number(params2.get('id'));
   updateBookmarkBtn(detailId);
 
+  const starred = localStorage.getItem(`starred-${skill.id}`) === '1';
+
   container.innerHTML = `
     <div class="detail-hero">
       <img src="${skill.image}" alt="${skill.name}" class="detail-img" />
@@ -208,9 +210,14 @@ function renderDetail(skill) {
         <h1 class="detail-title">${skill.name}</h1>
         <div class="detail-badges">
           <span class="diff-badge ${diffClass}">${skill.difficulty}</span>
-          <span class="stat-badge">⭐ ${skill.popularity} Popularity</span>
-          <span class="stat-badge">👁️ ${skill.views.toLocaleString()} Views</span>
+          <span class="stat-badge" id="liveViews">👁️ ${skill.views.toLocaleString()} Views</span>
           <span class="stat-badge">🔥 ${skill.trendScore} Trend Score</span>
+          <button class="star-btn${starred ? ' starred' : ''}" id="starBtn"
+            onclick="toggleStar(${skill.id})" title="${starred ? 'Click to unstar' : 'Click to star'}">
+            <span class="star-icon">${starred ? '⭐' : '☆'}</span>
+            <span id="starCount">${skill.popularity}</span>
+            <span class="star-label">${starred ? 'Starred' : 'Star'}</span>
+          </button>
         </div>
       </div>
     </div>
