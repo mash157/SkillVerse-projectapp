@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Analytics Dashboard – SkillVerse</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="css/style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="container header-inner">
+      <a href="/" class="logo">
+        <span class="logo-icon">◈</span>
+        <span>SkillVerse</span>
+      </a>
+      <nav class="nav">
+        <a href="/" class="nav-link">Explore</a>
+        <a href="/dashboard" class="nav-link active">Dashboard</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="main">
+    <div class="container">
+
+      <!-- Page header -->
+      <div class="dashboard-header">
+        <div>
+          <h1 class="page-title">📊 Analytics Dashboard</h1>
+          <p class="page-subtitle">Real-time insights — skills ranked by trendScore = popularity + views + growth</p>
+        </div>
+        <a href="/" class="btn-home">
+          <span>🏠</span> Back to Home
+        </a>
+      </div>
+
+      <!-- Stat Cards -->
+      <div class="stats-grid" id="statsGrid">
+        <div class="stat-card">
+          <div class="stat-icon">📚</div>
+          <div class="stat-value" id="statTotal">—</div>
+          <div class="stat-label">Total Skills</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon">⭐</div>
+          <div class="stat-value" id="statAvgPop">—</div>
+          <div class="stat-label">Avg Popularity</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon">👁️</div>
+          <div class="stat-value" id="statViews">—</div>
+          <div class="stat-label">Total Views</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon">🔗</div>
+          <div class="stat-value" id="statResources">—</div>
+          <div class="stat-label">Learning Resources</div>
+        </div>
+      </div>
+
+      <!-- Charts -->
+      <div class="charts-grid">
+        <div class="chart-card">
+          <div class="chart-card-header">
+            <h3 class="chart-title">🔥 Top Trending Skills</h3>
+            <span class="chart-subtitle">Ranked by trendScore (popularity + views + growth)</span>
+          </div>
+          <canvas id="trendingChart"></canvas>
+        </div>
+
+        <div class="chart-card">
+          <div class="chart-card-header">
+            <h3 class="chart-title">🗂️ Category Distribution</h3>
+            <span class="chart-subtitle">Number of skills per category</span>
+          </div>
+          <canvas id="categoryChart"></canvas>
+        </div>
+
+        <div class="chart-card">
+          <div class="chart-card-header">
+            <h3 class="chart-title">🎯 Difficulty Breakdown</h3>
+            <span class="chart-subtitle">Beginner / Intermediate / Advanced</span>
+          </div>
+          <canvas id="difficultyChart"></canvas>
+        </div>
+
+        <div class="chart-card">
+          <div class="chart-card-header">
+            <h3 class="chart-title">👁️ Most Viewed Skills</h3>
+            <span class="chart-subtitle">Top 5 by total page views</span>
+          </div>
+          <canvas id="viewsChart"></canvas>
+        </div>
+      </div>
+
+      <!-- Tables -->
+      <div class="tables-grid">
+        <div class="table-card">
+          <h3 class="table-title">🔥 Top Trending Skills</h3>
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>Skill</th>
+                <th>Trend Score</th>
+              </tr>
+            </thead>
+            <tbody id="trendingTable"></tbody>
+          </table>
+        </div>
+
+        <div class="table-card">
+          <h3 class="table-title">🔗 Most Clicked Resources</h3>
+          <div id="popularResources">
+            <div class="loading-shimmer" style="height:52px;border-radius:8px;margin-bottom:10px;"></div>
+            <div class="loading-shimmer" style="height:52px;border-radius:8px;margin-bottom:10px;"></div>
+            <div class="loading-shimmer" style="height:52px;border-radius:8px;"></div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <span class="footer-logo"><span class="logo-icon">◈</span> SkillVerse</span>
+          <p class="footer-tagline">Discover. Learn. Level up your career.</p>
+        </div>
+        <nav class="footer-nav">
+          <a href="/" class="footer-link">🏠 Explore</a>
+          <a href="/dashboard" class="footer-link">📊 Dashboard</a>
+        </nav>
+        <div class="footer-meta">
+          <span>Built with Node.js &amp; Express</span>
+          <span class="footer-dot">•</span>
+          <span>trendScore = popularity + views + growth</span>
+          <span class="footer-dot">•</span>
+          <span>&copy; 2026 SkillVerse</span>
+        </div>
+        <div class="footer-credit">Developed with ❤️ by <span class="footer-author">@mash157</span></div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/dashboard.js"></script>
+</body>
+</html>

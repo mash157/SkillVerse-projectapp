@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SkillVerse – Interactive Skill Discovery Platform</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="container header-inner">
+      <a href="/" class="logo">
+        <span class="logo-icon">◈</span>
+        <span>SkillVerse</span>
+      </a>
+      <nav class="nav">
+        <a href="/" class="nav-link active">Explore</a>
+        <a href="/dashboard" class="nav-link">Dashboard</a>
+        <a href="javascript:void(0)" class="nav-link nav-saved" id="savedNavBtn" onclick="viewSaved()" style="display:none">
+          🔖 Saved <span class="saved-badge" id="savedBadge">0</span>
+        </a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-content">
+        <span class="hero-badge"><span class="hero-badge-dot"></span>🚀 15 In-Demand Skills • Updated 2026</span>
+        <h1 class="hero-title">Discover Your Next<br /><span class="gradient-text">Career Skill</span></h1>
+        <p class="hero-subtitle">Explore curated skills, auto-generated learning roadmaps, and career paths — all ranked by real-time trend scores.</p>
+        <div class="search-wrapper">
+          <span class="search-icon">🔍</span>
+          <input type="text" id="searchInput" placeholder="Search skills, technologies, careers..." autocomplete="off" />
+          <button class="search-btn" id="clearSearch" style="display:none" title="Clear search">✕</button>
+        </div>
+        <div class="suggest-dropdown" id="suggestDropdown"></div>
+
+        <div class="hero-stats">
+          <div class="hero-stat">
+            <span class="hero-stat-icon">🚀</span>
+            <div>
+              <div class="hero-stat-num" data-count="15">0</div>
+              <div class="hero-stat-label">Skills Available</div>
+            </div>
+          </div>
+          <div class="hero-stat-divider"></div>
+          <div class="hero-stat">
+            <span class="hero-stat-icon">📚</span>
+            <div>
+              <div class="hero-stat-num" data-count="90" data-suffix="+">0+</div>
+              <div class="hero-stat-label">Learning Resources</div>
+            </div>
+          </div>
+          <div class="hero-stat-divider"></div>
+          <div class="hero-stat">
+            <span class="hero-stat-icon">📈</span>
+            <div>
+              <div class="hero-stat-num">Live</div>
+              <div class="hero-stat-label">Trend Rankings</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Filters -->
+  <section class="filters-section">
+    <div class="container filters-inner">
+      <div class="filter-group">
+        <select id="categoryFilter">
+          <option value="">All Categories</option>
+        </select>
+        <select id="difficultyFilter">
+          <option value="">All Levels</option>
+          <option value="Beginner">Beginner</option>
+          <option value="Intermediate">Intermediate</option>
+          <option value="Advanced">Advanced</option>
+        </select>
+        <select id="sortFilter">
+          <option value="trendScore">🔥 Trending</option>
+          <option value="popular">⭐ Most Popular</option>
+          <option value="views">👁️ Most Viewed</option>
+        </select>
+      </div>
+      <div class="filter-info">
+        <span id="skillCount">Loading skills…</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills Grid -->
+  <main class="main">
+    <div class="container">
+      <div class="skills-grid" id="skillsGrid">
+        <div class="skeleton-card"><div class="skeleton-img"></div><div class="skeleton-body"><div class="skeleton-line short"></div><div class="skeleton-line mid"></div><div class="skeleton-line wide"></div><div class="skeleton-line short"></div></div></div>
+        <div class="skeleton-card"><div class="skeleton-img"></div><div class="skeleton-body"><div class="skeleton-line mid"></div><div class="skeleton-line wide"></div><div class="skeleton-line short"></div><div class="skeleton-line mid"></div></div></div>
+        <div class="skeleton-card"><div class="skeleton-img"></div><div class="skeleton-body"><div class="skeleton-line short"></div><div class="skeleton-line wide"></div><div class="skeleton-line mid"></div><div class="skeleton-line short"></div></div></div>
+        <div class="skeleton-card"><div class="skeleton-img"></div><div class="skeleton-body"><div class="skeleton-line wide"></div><div class="skeleton-line short"></div><div class="skeleton-line mid"></div><div class="skeleton-line short"></div></div></div>
+        <div class="skeleton-card"><div class="skeleton-img"></div><div class="skeleton-body"><div class="skeleton-line mid"></div><div class="skeleton-line short"></div><div class="skeleton-line wide"></div><div class="skeleton-line mid"></div></div></div>
+        <div class="skeleton-card"><div class="skeleton-img"></div><div class="skeleton-body"><div class="skeleton-line short"></div><div class="skeleton-line mid"></div><div class="skeleton-line wide"></div><div class="skeleton-line short"></div></div></div>
+      </div>
+      <div class="empty-state" id="emptyState" style="display:none">
+        <span>🔍</span>
+        <h3>No skills found</h3>
+        <p>Try adjusting your search or filters</p>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <span class="footer-logo"><span class="logo-icon">◈</span> SkillVerse</span>
+          <p class="footer-tagline">Discover. Learn. Level up your career.</p>
+        </div>
+        <nav class="footer-nav">
+          <a href="/" class="footer-link">🏠 Explore</a>
+          <a href="/dashboard" class="footer-link">📊 Dashboard</a>
+        </nav>
+        <div class="footer-meta">
+          <span>Built with Node.js &amp; Express</span>
+          <span class="footer-dot">•</span>
+          <span>trendScore = popularity + views + growth</span>
+          <span class="footer-dot">•</span>
+          <span>&copy; 2026 SkillVerse</span>
+        </div>
+        <div class="footer-credit">Developed with ❤️ by <span class="footer-author">@mash157</span></div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/search.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

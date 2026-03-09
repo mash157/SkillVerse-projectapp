@@ -1,0 +1,708 @@
+[
+  {
+    "id": 1,
+    "name": "Artificial Intelligence",
+    "category": "Technology",
+    "difficulty": "Advanced",
+    "popularity": 92,
+    "views": 1243,
+    "growth": 18,
+    "description": "Artificial Intelligence (AI) is the simulation of human intelligence processes by computer systems. It encompasses machine learning, natural language processing, computer vision, and robotics — transforming every industry from healthcare and finance to autonomous vehicles and creative arts.",
+    "image": "https://images.unsplash.com/photo-1677442135703-1787eea5ce01?w=800&auto=format&fit=crop&q=80",
+    "skills": [
+      "Python",
+      "TensorFlow",
+      "PyTorch",
+      "Machine Learning",
+      "Statistics",
+      "Neural Networks"
+    ],
+    "careerOpportunities": [
+      "AI Engineer",
+      "ML Engineer",
+      "AI Researcher",
+      "Data Scientist",
+      "AI Product Manager"
+    ],
+    "resources": [
+      {
+        "title": "Machine Learning by Stanford (Coursera)",
+        "type": "Course",
+        "link": "https://www.coursera.org/learn/machine-learning",
+        "clicks": 45
+      },
+      {
+        "title": "AI for Everyone – Andrew Ng",
+        "type": "Course",
+        "link": "https://www.coursera.org/learn/ai-for-everyone",
+        "clicks": 32
+      },
+      {
+        "title": "Deep Learning Specialization",
+        "type": "Course",
+        "link": "https://www.deeplearning.ai/",
+        "clicks": 28
+      },
+      {
+        "title": "Fast.ai Practical Deep Learning",
+        "type": "Tutorial",
+        "link": "https://www.fast.ai/",
+        "clicks": 19
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "name": "Web Development",
+    "category": "Web Development",
+    "difficulty": "Beginner",
+    "popularity": 88,
+    "views": 2104,
+    "growth": 12,
+    "description": "Web development is the process of building and maintaining websites and web applications. It covers frontend development (HTML, CSS, JavaScript) and backend development (server-side logic, databases, APIs) to create complete, functional web experiences for billions of users worldwide.",
+    "image": "https://images.unsplash.com/photo-1627398242454-45a1465c2479?w=800&auto=format&fit=crop&q=80",
+    "skills": [
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "React",
+      "Node.js",
+      "SQL"
+    ],
+    "careerOpportunities": [
+      "Frontend Developer",
+      "Backend Developer",
+      "Full Stack Developer",
+      "Web Designer",
+      "Solutions Architect"
+    ],
+    "resources": [
+      {
+        "title": "The Odin Project",
+        "type": "Tutorial",
+        "link": "https://www.theodinproject.com/",
+        "clicks": 68
+      },
+      {
+        "title": "freeCodeCamp Web Dev",
+        "type": "Course",
+        "link": "https://www.freecodecamp.org/",
+        "clicks": 82
+      },
+      {
+        "title": "MDN Web Docs",
+        "type": "Documentation",
+        "link": "https://developer.mozilla.org/",
+        "clicks": 54
+      },
+      {
+        "title": "Full Stack Open",
+        "type": "Course",
+        "link": "https://fullstackopen.com/",
+        "clicks": 41
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "name": "Machine Learning",
+    "category": "Data Science",
+    "difficulty": "Advanced",
+    "popularity": 85,
+    "views": 980,
+    "growth": 22,
+    "description": "Machine Learning is a branch of AI that enables computers to learn from data without being explicitly programmed. It uses algorithms to find patterns in data and build predictive models for recommendation systems, fraud detection, image recognition, and many other real-world applications.",
+    "image": "https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?w=800&auto=format&fit=crop&q=80",
+    "skills": [
+      "Python",
+      "Scikit-Learn",
+      "TensorFlow",
+      "NumPy",
+      "Pandas",
+      "Mathematics"
+    ],
+    "careerOpportunities": [
+      "ML Engineer",
+      "Data Scientist",
+      "Research Scientist",
+      "AI Engineer",
+      "MLOps Engineer"
+    ],
+    "resources": [
+      {
+        "title": "ML Crash Course by Google",
+        "type": "Course",
+        "link": "https://developers.google.com/machine-learning/crash-course",
+        "clicks": 38
+      },
+      {
+        "title": "Hands-On ML with Scikit-Learn & TensorFlow",
+        "type": "Book",
+        "link": "https://www.oreilly.com/library/view/hands-on-machine-learning/9781492032632/",
+        "clicks": 25
+      },
+      {
+        "title": "Kaggle Learn",
+        "type": "Tutorial",
+        "link": "https://www.kaggle.com/learn",
+        "clicks": 51
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "name": "UI/UX Design",
+    "category": "Design",
+    "difficulty": "Intermediate",
+    "popularity": 78,
+    "views": 760,
+    "growth": 15,
+    "description": "UI/UX Design focuses on creating intuitive, accessible, and visually appealing digital interfaces. User Interface (UI) design deals with visual aesthetics while User Experience (UX) focuses on the overall usability and feel of a product — combining psychology, design principles, and user research.",
+    "image": "https://images.unsplash.com/photo-1586717791821-3f44a563fa4c?w=800&auto=format&fit=crop&q=80",
+    "skills": [
+      "Figma",
+      "Adobe XD",
+      "User Research",
+      "Wireframing",
+      "Prototyping",
+      "Design Systems"
+    ],
+    "careerOpportunities": [
+      "UX Designer",
+      "UI Designer",
+      "Product Designer",
+      "UX Researcher",
+      "Design Lead"
+    ],
+    "resources": [
+      {
+        "title": "Google UX Design Certificate",
+        "type": "Course",
+        "link": "https://www.coursera.org/professional-certificates/google-ux-design",
+        "clicks": 33
+      },
+      {
+        "title": "Nielsen Norman Group Articles",
+        "type": "Article",
+        "link": "https://www.nngroup.com/articles/",
+        "clicks": 21
+      },
+      {
+        "title": "Figma Official Tutorials",
+        "type": "Tutorial",
+        "link": "https://www.figma.com/resources/learn-design/",
+        "clicks": 44
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "name": "Node.js Development",
+    "category": "Web Development",
+    "difficulty": "Intermediate",
+    "popularity": 82,
+    "views": 1120,
+    "growth": 10,
+    "description": "Node.js is a powerful JavaScript runtime built on Chrome's V8 engine that enables server-side JavaScript. It is event-driven and non-blocking, making it ideal for building scalable REST APIs, real-time apps, microservices, and server-side tools that power modern web applications.",
+    "image": "https://images.unsplash.com/photo-1542831371-29b0f74f9713?w=800&auto=format&fit=crop&q=80",
+    "skills": [
+      "JavaScript",
+      "Express.js",
+      "REST APIs",
+      "MongoDB",
+      "JWT",
+      "WebSockets"
+    ],
+    "careerOpportunities": [
+      "Node.js Developer",
+      "Backend Developer",
+      "Full Stack Developer",
+      "API Developer",
+      "Solutions Architect"
+    ],
+    "resources": [
+      {
+        "title": "Node.js Official Documentation",
+        "type": "Documentation",
+        "link": "https://nodejs.org/en/docs/",
+        "clicks": 29
+      },
+      {
+        "title": "Express.js Getting Started",
+        "type": "Tutorial",
+        "link": "https://expressjs.com/en/starter/hello-world.html",
+        "clicks": 36
+      },
+      {
+        "title": "The Complete Node.js Developer Course (Udemy)",
+        "type": "Course",
+        "link": "https://www.udemy.com/course/the-complete-nodejs-developer-course-2/",
+        "clicks": 47
+      }
+    ]
+  },
+  {
+    "id": 6,
+    "name": "Data Science",
+    "category": "Data Science",
+    "difficulty": "Advanced",
+    "popularity": 89,
+    "views": 1051,
+    "growth": 19,
+    "description": "Data Science combines statistics, mathematics, programming, and domain expertise to extract meaningful insights from large datasets. Data scientists build models, run experiments, and communicate findings through visualizations and reports to drive business decisions across every industry.",
+    "image": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&auto=format&fit=crop&q=80",
+    "skills": [
+      "Python",
+      "R",
+      "SQL",
+      "Pandas",
+      "Matplotlib",
+      "Machine Learning",
+      "Statistics"
+    ],
+    "careerOpportunities": [
+      "Data Scientist",
+      "Data Analyst",
+      "BI Analyst",
+      "Research Scientist",
+      "Data Engineer"
+    ],
+    "resources": [
+      {
+        "title": "IBM Data Science Professional Certificate",
+        "type": "Course",
+        "link": "https://www.coursera.org/professional-certificates/ibm-data-science",
+        "clicks": 42
+      },
+      {
+        "title": "Towards Data Science Blog",
+        "type": "Blog",
+        "link": "https://towardsdatascience.com/",
+        "clicks": 58
+      },
+      {
+        "title": "DataCamp",
+        "type": "Platform",
+        "link": "https://www.datacamp.com/",
+        "clicks": 35
+      }
+    ]
+  },
+  {
+    "id": 7,
+    "name": "React.js",
+    "category": "Web Development",
+    "difficulty": "Intermediate",
+    "popularity": 87,
+    "views": 1683,
+    "growth": 14,
+    "description": "React.js is a JavaScript library for building user interfaces, particularly single-page applications. Developed by Meta, it uses a component-based architecture and a virtual DOM for efficient UI updates — it is the most popular frontend framework and in massive demand across the industry.",
+    "image": "https://images.unsplash.com/photo-1633356122544-f134324a6cee?w=800&auto=format&fit=crop&q=80",
+    "skills": [
+      "JavaScript",
+      "JSX",
+      "React Hooks",
+      "Redux",
+      "Context API",
+      "REST APIs"
+    ],
+    "careerOpportunities": [
+      "React Developer",
+      "Frontend Developer",
+      "Full Stack Developer",
+      "React Native Developer",
+      "JavaScript Engineer"
+    ],
+    "resources": [
+      {
+        "title": "Official React Documentation",
+        "type": "Documentation",
+        "link": "https://react.dev/",
+        "clicks": 73
+      },
+      {
+        "title": "React – The Complete Guide (Udemy)",
+        "type": "Course",
+        "link": "https://www.udemy.com/course/react-the-complete-guide-incl-redux/",
+        "clicks": 90
+      },
+      {
+        "title": "Scrimba Learn React",
+        "type": "Course",
+        "link": "https://scrimba.com/learn/learnreact",
+        "clicks": 31
+      }
+    ]
+  },
+  {
+    "id": 8,
+    "name": "Cybersecurity",
+    "category": "Security",
+    "difficulty": "Advanced",
+    "popularity": 91,
+    "views": 870,
+    "growth": 24,
+    "description": "Cybersecurity involves protecting computer systems, networks, and data from theft, damage, or unauthorized access. It includes ethical hacking, network security, cryptography, and incident response — one of the fastest-growing, highest-paying, and most critical fields in all of technology.",
+    "image": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=800&auto=format&fit=crop&q=80",
+    "skills": [
+      "Linux",
+      "Python",
+      "Networking",
+      "Cryptography",
+      "Ethical Hacking",
+      "Kali Linux",
+      "Metasploit"
+    ],
+    "careerOpportunities": [
+      "Security Analyst",
+      "Penetration Tester",
+      "Security Engineer",
+      "CISO",
+      "Forensics Analyst"
+    ],
+    "resources": [
+      {
+        "title": "Cybersecurity Specialization (Coursera)",
+        "type": "Course",
+        "link": "https://www.coursera.org/specializations/cyber-security",
+        "clicks": 49
+      },
+      {
+        "title": "TryHackMe",
+        "type": "Platform",
+        "link": "https://tryhackme.com/",
+        "clicks": 62
+      },
+      {
+        "title": "Hack The Box",
+        "type": "Platform",
+        "link": "https://www.hackthebox.com/",
+        "clicks": 55
+      }
+    ]
+  },
+  {
+    "id": 9,
+    "name": "DevOps & CI/CD",
+    "category": "DevOps",
+    "difficulty": "Advanced",
+    "popularity": 83,
+    "views": 640,
+    "growth": 20,
+    "description": "DevOps integrates software development and IT operations through automation, continuous integration, and continuous delivery. It accelerates software delivery, improves system reliability, and eliminates silos between development and operations teams using tools like Docker, Kubernetes, and CI/CD pipelines.",
+    "image": "https://images.unsplash.com/photo-1667372393119-3d4c48d07fc9?w=800&auto=format&fit=crop&q=80",
+    "skills": [
+      "Docker",
+      "Kubernetes",
+      "Jenkins",
+      "GitHub Actions",
+      "Terraform",
+      "Ansible",
+      "AWS"
+    ],
+    "careerOpportunities": [
+      "DevOps Engineer",
+      "Site Reliability Engineer",
+      "Cloud Engineer",
+      "Platform Engineer",
+      "Infrastructure Engineer"
+    ],
+    "resources": [
+      {
+        "title": "Docker Official Documentation",
+        "type": "Documentation",
+        "link": "https://docs.docker.com/",
+        "clicks": 38
+      },
+      {
+        "title": "DevOps Roadmap",
+        "type": "Guide",
+        "link": "https://roadmap.sh/devops",
+        "clicks": 52
+      },
+      {
+        "title": "Linux Foundation DevOps Course",
+        "type": "Course",
+        "link": "https://training.linuxfoundation.org/",
+        "clicks": 27
+      }
+    ]
+  },
+  {
+    "id": 10,
+    "name": "Figma & UI Design",
+    "category": "Design",
+    "difficulty": "Beginner",
+    "popularity": 75,
+    "views": 590,
+    "growth": 11,
+    "description": "Figma is the industry-leading collaborative interface design tool. It enables designers to create wireframes, high-fidelity designs, interactive prototypes, and full design systems in real-time with teammates. Learning Figma is essential for modern designers, developers, and product teams.",
+    "image": "https://images.unsplash.com/photo-1561070791-2526d30994b5?w=800&auto=format&fit=crop&q=80",
+    "skills": [
+      "Figma",
+      "Wireframing",
+      "Prototyping",
+      "Auto Layout",
+      "Components",
+      "Design Systems"
+    ],
+    "careerOpportunities": [
+      "UI Designer",
+      "Product Designer",
+      "Design System Lead",
+      "UX/UI Consultant",
+      "Brand Designer"
+    ],
+    "resources": [
+      {
+        "title": "Figma for Beginners (YouTube)",
+        "type": "Video",
+        "link": "https://www.youtube.com/watch?v=Cx2dkpBxst8",
+        "clicks": 64
+      },
+      {
+        "title": "Figma Official Community",
+        "type": "Community",
+        "link": "https://www.figma.com/community",
+        "clicks": 40
+      },
+      {
+        "title": "Flux Academy Figma Course",
+        "type": "Course",
+        "link": "https://www.flux-academy.com/",
+        "clicks": 23
+      }
+    ]
+  },
+  {
+    "id": 11,
+    "name": "Digital Marketing",
+    "category": "Business",
+    "difficulty": "Beginner",
+    "popularity": 72,
+    "views": 520,
+    "growth": 8,
+    "description": "Digital marketing encompasses all marketing efforts that use digital channels — search engines, social media, email, and websites. It helps businesses reach their audience online, generate leads, and drive revenue. Understanding digital marketing is essential for any modern business professional.",
+    "image": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&auto=format&fit=crop&q=80",
+    "skills": [
+      "SEO",
+      "Google Analytics",
+      "Social Media",
+      "Content Marketing",
+      "Email Marketing",
+      "PPC"
+    ],
+    "careerOpportunities": [
+      "Digital Marketing Specialist",
+      "SEO Analyst",
+      "Social Media Manager",
+      "Content Strategist",
+      "Growth Hacker"
+    ],
+    "resources": [
+      {
+        "title": "Google Digital Marketing Certificate",
+        "type": "Course",
+        "link": "https://skillshop.withgoogle.com/",
+        "clicks": 56
+      },
+      {
+        "title": "HubSpot Academy",
+        "type": "Course",
+        "link": "https://academy.hubspot.com/",
+        "clicks": 43
+      },
+      {
+        "title": "Neil Patel Blog",
+        "type": "Blog",
+        "link": "https://neilpatel.com/blog/",
+        "clicks": 30
+      }
+    ]
+  },
+  {
+    "id": 12,
+    "name": "Blockchain Development",
+    "category": "Technology",
+    "difficulty": "Advanced",
+    "popularity": 80,
+    "views": 431,
+    "growth": 16,
+    "description": "Blockchain is a distributed ledger technology enabling secure, transparent, and tamper-resistant transactions. Blockchain developers build decentralized applications (dApps), smart contracts, and DeFi protocols for use cases in finance, supply chain, identity management, and digital ownership.",
+    "image": "https://images.unsplash.com/photo-1639762681485-074b7f938ba0?w=800&auto=format&fit=crop&q=80",
+    "skills": [
+      "Solidity",
+      "Ethereum",
+      "Web3.js",
+      "Smart Contracts",
+      "JavaScript",
+      "Cryptography"
+    ],
+    "careerOpportunities": [
+      "Blockchain Developer",
+      "Smart Contract Auditor",
+      "DeFi Engineer",
+      "Web3 Developer",
+      "Crypto Analyst"
+    ],
+    "resources": [
+      {
+        "title": "CryptoZombies – Solidity Tutorial",
+        "type": "Tutorial",
+        "link": "https://cryptozombies.io/",
+        "clicks": 37
+      },
+      {
+        "title": "Ethereum Official Documentation",
+        "type": "Documentation",
+        "link": "https://ethereum.org/en/developers/docs/",
+        "clicks": 30
+      },
+      {
+        "title": "Buildspace Web3 Projects",
+        "type": "Platform",
+        "link": "https://buildspace.so/",
+        "clicks": 24
+      }
+    ]
+  },
+  {
+    "id": 13,
+    "name": "Python Programming",
+    "category": "Technology",
+    "difficulty": "Beginner",
+    "popularity": 90,
+    "views": 1894,
+    "growth": 9,
+    "description": "Python is the world's most popular programming language, renowned for its readability and versatility. It powers web backends, data science, automation, AI, and scripting. Python's rich ecosystem and gentle learning curve make it the ideal first language for developers at any level.",
+    "image": "https://images.unsplash.com/photo-1526379095098-d400fd0bf935?w=800&auto=format&fit=crop&q=80",
+    "skills": [
+      "Python",
+      "Functions",
+      "OOP",
+      "File I/O",
+      "Libraries",
+      "Automation"
+    ],
+    "careerOpportunities": [
+      "Software Engineer",
+      "Data Scientist",
+      "Backend Developer",
+      "Automation Engineer",
+      "DevOps Engineer"
+    ],
+    "resources": [
+      {
+        "title": "Python.org Official Tutorial",
+        "type": "Documentation",
+        "link": "https://docs.python.org/3/tutorial/",
+        "clicks": 48
+      },
+      {
+        "title": "Automate the Boring Stuff with Python",
+        "type": "Book",
+        "link": "https://automatetheboringstuff.com/",
+        "clicks": 61
+      },
+      {
+        "title": "Python Bootcamp – Udemy",
+        "type": "Course",
+        "link": "https://www.udemy.com/course/complete-python-bootcamp/",
+        "clicks": 74
+      }
+    ]
+  },
+  {
+    "id": 14,
+    "name": "Mobile App Development",
+    "category": "Mobile",
+    "difficulty": "Intermediate",
+    "popularity": 81,
+    "views": 760,
+    "growth": 13,
+    "description": "Mobile app development creates software applications for iOS and Android devices. With over 6 billion smartphone users globally, building cross-platform apps with React Native or Flutter enables developers to reach a massive audience with a single codebase and native performance.",
+    "image": "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=800&auto=format&fit=crop&q=80",
+    "skills": [
+      "React Native",
+      "Flutter",
+      "Dart",
+      "JavaScript",
+      "REST APIs",
+      "Push Notifications"
+    ],
+    "careerOpportunities": [
+      "Mobile Developer",
+      "iOS Developer",
+      "Android Developer",
+      "React Native Developer",
+      "Flutter Developer"
+    ],
+    "resources": [
+      {
+        "title": "React Native Official Docs",
+        "type": "Documentation",
+        "link": "https://reactnative.dev/docs/getting-started",
+        "clicks": 34
+      },
+      {
+        "title": "Flutter Official Documentation",
+        "type": "Documentation",
+        "link": "https://flutter.dev/docs",
+        "clicks": 39
+      },
+      {
+        "title": "Expo Framework",
+        "type": "Tool",
+        "link": "https://expo.dev/",
+        "clicks": 27
+      }
+    ]
+  },
+  {
+    "id": 15,
+    "name": "Cloud Computing (AWS)",
+    "category": "DevOps",
+    "difficulty": "Intermediate",
+    "popularity": 86,
+    "views": 910,
+    "growth": 17,
+    "description": "Cloud computing delivers computing services over the internet — servers, storage, databases, networking, and AI. AWS leads the global cloud market and AWS certification is one of the most valuable credentials in tech, opening doors to roles in cloud architecture, DevOps, and engineering.",
+    "image": "https://images.unsplash.com/photo-1544197150-b99a580bb7a8?w=800&auto=format&fit=crop&q=80",
+    "skills": [
+      "AWS EC2",
+      "S3",
+      "Lambda",
+      "RDS",
+      "IAM",
+      "CloudFormation",
+      "Terraform"
+    ],
+    "careerOpportunities": [
+      "Cloud Engineer",
+      "AWS Solutions Architect",
+      "DevOps Engineer",
+      "Cloud Architect",
+      "SRE"
+    ],
+    "resources": [
+      {
+        "title": "AWS Training & Certification",
+        "type": "Platform",
+        "link": "https://aws.amazon.com/training/",
+        "clicks": 53
+      },
+      {
+        "title": "AWS Certified Solutions Architect Course",
+        "type": "Course",
+        "link": "https://acloudguru.com/",
+        "clicks": 46
+      },
+      {
+        "title": "TutorialsDojo AWS Practice Exams",
+        "type": "Practice",
+        "link": "https://tutorialsdojo.com/",
+        "clicks": 38
+      }
+    ]
+  }
+]
