@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Skill Detail – SkillVerse</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="container header-inner">
+      <a href="/" class="logo">
+        <span class="logo-icon">◈</span>
+        <span>SkillVerse</span>
+      </a>
+      <nav class="nav">
+        <a href="/" class="nav-link">Explore</a>
+        <a href="/dashboard" class="nav-link">Dashboard</a>
+        <button class="nav-link btn-bookmark" id="bookmarkBtn" onclick="toggleBookmark()" title="Save this skill">🔖 Save</button>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Detail Content -->
+  <main class="main detail-main">
+    <div class="container">
+      <a href="/" class="back-btn">← Back to Skills</a>
+
+      <!-- Content rendered by JS -->
+      <div id="skillDetail">
+        <div class="loading-detail">
+          <div class="loading-shimmer" style="height:340px;margin-bottom:24px;border-radius:14px;"></div>
+          <div class="loading-shimmer" style="height:56px;margin-bottom:14px;border-radius:10px;"></div>
+          <div class="loading-shimmer" style="height:110px;border-radius:10px;"></div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <span class="footer-logo"><span class="logo-icon">◈</span> SkillVerse</span>
+          <p class="footer-tagline">Discover. Learn. Level up your career.</p>
+        </div>
+        <nav class="footer-nav">
+          <a href="/" class="footer-link">🏠 Explore</a>
+          <a href="/dashboard" class="footer-link">📊 Dashboard</a>
+        </nav>
+        <div class="footer-meta">
+          <span>Built with Node.js &amp; Express</span>
+          <span class="footer-dot">•</span>
+          <span>&copy; 2026 SkillVerse</span>
+        </div>
+        <div class="footer-credit">Developed with ❤️ by <span class="footer-author">@mash157</span></div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/resources.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
