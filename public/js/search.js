@@ -87,8 +87,7 @@ async function fetchSuggestions(q) {
   const dropdown = document.getElementById('suggestDropdown');
   if (!dropdown) return;
   try {
-    const res  = await fetch(`/api/skills/suggest?q=${encodeURIComponent(q)}`);
-    const data = await res.json();
+    const data = await window.SkillVerseData.getSuggestions(q);
     _suggestIndex = -1;
     if (!data.length) { hideSuggest(); return; }
 

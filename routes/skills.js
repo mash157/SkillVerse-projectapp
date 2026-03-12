@@ -110,7 +110,7 @@ router.get('/', (req, res) => {
       skills = rankSkills(skills);
     }
 
-    skills = skills.map(s => ({ ...s, trendScore: trendScore(s) }));
+    skills = skills.map(s => ({ ...s, trendScore: trendScore(s), roadmap: generateRoadmap(s) }));
     res.json(skills);
   } catch (err) {
     console.error(err);
@@ -198,6 +198,25 @@ router.post('/:id/star', (req, res) => {
   } catch (err) {
     console.error(err);
     res.status(500).json({ error: 'Failed to toggle star' });
+  }
+});
+
+// GET /api/skills/compare?ids=1,2
+router.get('/compare', (req, res) => {
+  try {
+    const skills = load();
+    const ids = (req.query.ids || '').split(',').map(id => parseInt(id, 10)).filter(n => !isNaN(n) && n > 0);
+    if (ids.length < 2) return res.status(400).json({ error: 'Provide at least 2 skill IDs separated by commas' });
+    const result = ids.slice(0, 2).map(id => {
+      const s = skills.find(sk => sk.id === id);
+      if (!s) return null;
+      return { ...s, trendScore: trendScore(s), roadmap: generateRoadmap(s) };
+    }).filter(Boolean);
+    if (result.length < 2) return res.status(404).json({ error: 'One or more skills not found' });
+    res.json(result);
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ error: 'Compare failed' });
   }
 });
 

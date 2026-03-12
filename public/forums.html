@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Forums – SkillVerse</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <!-- Bootstrap 5.3 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+  <!-- Custom styles -->
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- Bootstrap Navbar -->
+  <nav class="navbar navbar-expand-lg sv-navbar">
+    <div class="container">
+      <a class="navbar-brand sv-brand" href="/">
+        <span class="logo-icon">◈</span>
+        SkillVerse
+      </a>
+      <button class="navbar-toggler sv-toggler" type="button"
+              data-bs-toggle="collapse" data-bs-target="#svForumsNav"
+              aria-controls="svForumsNav" aria-expanded="false" aria-label="Toggle navigation">
+        <i class="bi bi-list"></i>
+      </button>
+      <div class="collapse navbar-collapse" id="svForumsNav">
+        <ul class="navbar-nav ms-auto align-items-lg-center gap-1">
+          <li class="nav-item">
+            <a class="nav-link sv-nav-link" href="/"><i class="bi bi-compass me-1"></i>Explore</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link sv-nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+              <i class="bi bi-book me-1"></i>Learn
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="/resources"><i class="bi bi-book me-2"></i>Learning Paths</a></li>
+              <li><a class="dropdown-item" href="/resources"><i class="bi bi-briefcase me-2"></i>Career Guide</a></li>
+              <li><a class="dropdown-item" href="/resources"><i class="bi bi-map me-2"></i>Skill Roadmaps</a></li>
+            </ul>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link sv-nav-link dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown">
+              <i class="bi bi-people me-1"></i>Community
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="/community"><i class="bi bi-heart me-2"></i>Community</a></li>
+              <li><a class="dropdown-item" href="/blog"><i class="bi bi-journal-text me-2"></i>Blog</a></li>
+              <li><a class="dropdown-item" href="/forums"><i class="bi bi-chat-dots me-2"></i>Forums</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" href="/support"><i class="bi bi-headset me-2"></i>Support</a></li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link sv-nav-link" href="/dashboard"><i class="bi bi-bar-chart-line me-1"></i>Dashboard</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link sv-nav-link" href="/profile"><i class="bi bi-mortarboard me-1"></i>My Learning</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <main class="main">
+    <div class="container">
+
+      <!-- Page Header -->
+      <div class="page-header text-center mb-5">
+        <div class="page-hero-badge">
+          <i class="bi bi-chat-square-text-fill me-2"></i>
+          <span>Connect & Collaborate</span>
+        </div>
+        <h1 class="page-title gradient-text mb-4">
+          <i class="bi bi-people-fill me-3 text-success"></i>
+          Community Forums
+        </h1>
+        <p class="page-subtitle mx-auto" style="max-width: 720px;">
+          Join discussions, ask questions, share knowledge, and connect with fellow learners in our vibrant community forums. Get help, give help, and grow together.
+        </p>
+      </div>
+
+      <!-- Forum Stats -->
+      <div class="row mb-5">
+        <div class="col-12">
+          <div class="forum-stats">
+            <div class="stat-item">
+              <div class="stat-icon">
+                <i class="bi bi-people-fill text-primary"></i>
+              </div>
+              <div class="stat-info">
+                <div class="stat-number">15,247</div>
+                <div class="stat-label">Active Members</div>
+              </div>
+            </div>
+            <div class="stat-divider"></div>
+            <div class="stat-item">
+              <div class="stat-icon">
+                <i class="bi bi-chat-dots-fill text-success"></i>
+              </div>
+              <div class="stat-info">
+                <div class="stat-number">3,829</div>
+                <div class="stat-label">Discussions</div>
+              </div>
+            </div>
+            <div class="stat-divider"></div>
+            <div class="stat-item">
+              <div class="stat-icon">
+                <i class="bi bi-reply-all-fill text-info"></i>
+              </div>
+              <div class="stat-info">
+                <div class="stat-number">28,463</div>
+                <div class="stat-label">Replies</div>
+              </div>
+            </div>
+            <div class="stat-divider"></div>
+            <div class="stat-item">
+              <div class="stat-icon">
+                <i class="bi bi-question-circle-fill text-warning"></i>
+              </div>
+              <div class="stat-info">
+                <div class="stat-number">1,247</div>
+                <div class="stat-label">Questions Solved</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Forum Categories -->
+      <div class="row g-4 mb-5">
+        
+        <!-- General Discussion -->
+        <div class="col-md-6">
+          <div class="forum-category">
+            <div class="category-header">
+              <div class="category-icon">
+                <i class="bi bi-chat-square-text-fill text-primary"></i>
+              </div>
+              <div class="category-info">
+                <h4>💬 General Discussion</h4>
+                <p>General conversations about learning, career advice, and community topics</p>
+                <div class="category-stats">
+                  <span><i class="bi bi-file-post me-1"></i>847 posts</span>
+                  <span><i class="bi bi-people me-1"></i>2,341 members</span>
+                </div>
+              </div>
+            </div>
+            <div class="recent-topics">
+              <div class="topic-item">
+                <div class="topic-title">Best resources for staying motivated while learning?</div>
+                <div class="topic-meta">
+                  <span>by <strong>Alex_C</strong></span>
+                  <span>2 hours ago</span>
+                </div>
+              </div>
+              <div class="topic-item">
+                <div class="topic-title">How do you balance learning with full-time work?</div>
+                <div class="topic-meta">
+                  <span>by <strong>Sarah_M</strong></span>
+                  <span>5 hours ago</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Programming -->
+        <div class="col-md-6">
+          <div class="forum-category">
+            <div class="category-header">
+              <div class="category-icon">
+                <i class="bi bi-code-slash text-success"></i>
+              </div>
+              <div class="category-info">
+                <h4>💻 Programming & Development</h4>
+                <p>Coding questions, project help, and technical discussions</p>
+                <div class="category-stats">
+                  <span><i class="bi bi-file-post me-1"></i>1,236 posts</span>
+                  <span><i class="bi bi-people me-1"></i>4,567 members</span>
+                </div>
+              </div>
+            </div>
+            <div class="recent-topics">
+              <div class="topic-item">
+                <div class="topic-title">Help with React useEffect cleanup function</div>
+                <div class="topic-meta">
+                  <span>by <strong>CodeMaster99</strong></span>
+                  <span>1 hour ago</span>
+                </div>
+              </div>
+              <div class="topic-item">
+                <div class="topic-title">Best practices for Node.js error handling</div>
+                <div class="topic-meta">
+                  <span>by <strong>DevGuru</strong></span>
+                  <span>3 hours ago</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Career Advice -->
+        <div class="col-md-6">
+          <div class="forum-category">
+            <div class="category-header">
+              <div class="category-icon">
+                <i class="bi bi-briefcase-fill text-info"></i>
+              </div>
+              <div class="category-info">
+                <h4>💼 Career Advice</h4>
+                <p>Job search tips, interview preparation, and career guidance</p>
+                <div class="category-stats">
+                  <span><i class="bi bi-file-post me-1"></i>623 posts</span>
+                  <span><i class="bi bi-people me-1"></i>1,892 members</span>
+                </div>
+              </div>
+            </div>
+            <div class="recent-topics">
+              <div class="topic-item">
+                <div class="topic-title">Negotiating salary for your first tech job</div>
+                <div class="topic-meta">
+                  <span>by <strong>CareerGrowth</strong></span>
+                  <span>4 hours ago</span>
+                </div>
+              </div>
+              <div class="topic-item">
+                <div class="topic-title">Portfolio projects that actually get you hired</div>
+                <div class="topic-meta">
+                  <span>by <strong>HireMe_Please</strong></span>
+                  <span>6 hours ago</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Design -->
+        <div class="col-md-6">
+          <div class="forum-category">
+            <div class="category-header">
+              <div class="category-icon">
+                <i class="bi bi-palette-fill text-warning"></i>
+              </div>
+              <div class="category-info">
+                <h4>🎨 Design & UX</h4>
+                <p>UI/UX design, creative feedback, and design tool discussions</p>
+                <div class="category-stats">
+                  <span><i class="bi bi-file-post me-1"></i>456 posts</span>
+                  <span><i class="bi bi-people me-1"></i>1,234 members</span>
+                </div>
+              </div>
+            </div>
+            <div class="recent-topics">
+              <div class="topic-item">
+                <div class="topic-title">Figma vs Adobe XD - which one to learn first?</div>
+                <div class="topic-meta">
+                  <span>by <strong>DesignNewbie</strong></span>
+                  <span>2 hours ago</span>
+                </div>
+              </div>
+              <div class="topic-item">
+                <div class="topic-title">Color theory basics for web design</div>
+                <div class="topic-meta">
+                  <span>by <strong>ColorExpert</strong></span>
+                  <span>7 hours ago</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Data Science -->
+        <div class="col-md-6">
+          <div class="forum-category">
+            <div class="category-header">
+              <div class="category-icon">
+                <i class="bi bi-graph-up text-purple"></i>
+              </div>
+              <div class="category-info">
+                <h4>📊 Data Science & AI</h4>
+                <p>Machine learning, data analysis, and AI project discussions</p>
+                <div class="category-stats">
+                  <span><i class="bi bi-file-post me-1"></i>789 posts</span>
+                  <span><i class="bi bi-people me-1"></i>2,156 members</span>
+                </div>
+              </div>
+            </div>
+            <div class="recent-topics">
+              <div class="topic-item">
+                <div class="topic-title">Getting started with TensorFlow - beginner tips</div>
+                <div class="topic-meta">
+                  <span>by <strong>MLExplorer</strong></span>
+                  <span>1 hour ago</span>
+                </div>
+              </div>
+              <div class="topic-item">
+                <div class="topic-title">Best datasets for practicing data visualization</div>
+                <div class="topic-meta">
+                  <span>by <strong>DataViz_Pro</strong></span>
+                  <span>4 hours ago</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Success Stories -->
+        <div class="col-md-6">
+          <div class="forum-category">
+            <div class="category-header">
+              <div class="category-icon">
+                <i class="bi bi-trophy-fill text-gold"></i>
+              </div>
+              <div class="category-info">
+                <h4>🏆 Success Stories</h4>
+                <p>Celebrate achievements, share your journey, and inspire others</p>
+                <div class="category-stats">
+                  <span><i class="bi bi-file-post me-1"></i>312 posts</span>
+                  <span><i class="bi bi-people me-1"></i>8,945 members</span>
+                </div>
+              </div>
+            </div>
+            <div class="recent-topics">
+              <div class="topic-item">
+                <div class="topic-title">From zero to full-stack developer in 6 months!</div>
+                <div class="topic-meta">
+                  <span>by <strong>DreamAchiever</strong></span>
+                  <span>30 minutes ago</span>
+                </div>
+              </div>
+              <div class="topic-item">
+                <div class="topic-title">Landed my first UX job at a Fortune 500 company!</div>
+                <div class="topic-meta">
+                  <span>by <strong>UXVictory</strong></span>
+                  <span>2 hours ago</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Community Guidelines -->
+      <div class="row mb-5">
+        <div class="col-12">
+          <div class="community-guidelines">
+            <div class="guidelines-header">
+              <h3><i class="bi bi-shield-check me-3"></i>Community Guidelines</h3>
+            </div>
+            <div class="guidelines-content">
+              <div class="row">
+                <div class="col-md-4">
+                  <div class="guideline-item">
+                    <i class="bi bi-heart-fill text-danger"></i>
+                    <h5>Be Respectful</h5>
+                    <p>Treat all community members with kindness and respect. We're all here to learn and grow together.</p>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="guideline-item">
+                    <i class="bi bi-lightbulb-fill text-warning"></i>
+                    <h5>Share Knowledge</h5>
+                    <p>Help others by sharing your expertise, resources, and experiences. Knowledge grows when shared.</p>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="guideline-item">
+                    <i class="bi bi-search text-info"></i>
+                    <h5>Search First</h5>
+                    <p>Before posting, search existing topics to avoid duplicates and find answers that may already exist.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Join Discussion CTA -->
+      <div class="row">
+        <div class="col-12">
+          <div class="join-discussion-cta text-center">
+            <h3 class="mb-4">🚀 Ready to Join the Conversation?</h3>
+            <p class="lead mb-4">
+              Connect with thousands of learners, share your knowledge, and accelerate your growth through community collaboration.
+            </p>
+            <div class="cta-buttons">
+              <button class="btn btn-primary btn-lg me-3 mb-3" onclick="alert('Forum registration coming soon! 🎉')">
+                <i class="bi bi-person-plus me-2"></i>Join Community
+              </button>
+              <button class="btn btn-outline-primary btn-lg mb-3" onclick="alert('Browse topics as guest! 👀')">
+                <i class="bi bi-eye me-2"></i>Browse as Guest
+              </button>
+            </div>
+            <p class="small text-muted mt-3">
+              Registration is free and takes less than 2 minutes. Join 15,000+ active learners today!
+            </p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <span class="footer-logo"><span class="logo-icon">◈</span> SkillVerse</span>
+          <p class="footer-tagline">Discover. Learn. Level up your career.</p>
+          
+          <!-- Social Media Links -->
+          <div class="footer-social mt-3">
+            <a href="https://twitter.com/skillverse" class="footer-social-link" title="Follow us on Twitter">
+              <i class="bi bi-twitter"></i>
+            </a>
+            <a href="https://linkedin.com/company/skillverse" class="footer-social-link" title="Connect on LinkedIn">
+              <i class="bi bi-linkedin"></i>
+            </a>
+            <a href="https://github.com/mash157" class="footer-social-link" title="Star us on GitHub">
+              <i class="bi bi-github"></i>
+            </a>
+            <a href="mailto:hello@skillverse.dev" class="footer-social-link" title="Contact us">
+              <i class="bi bi-envelope"></i>
+            </a>
+          </div>
+          
+          <!-- Newsletter Signup -->
+          <div class="footer-newsletter mt-4">
+            <h6 class="footer-newsletter-title">Stay Updated</h6>
+            <p class="footer-newsletter-desc">Get the latest skills and learning resources</p>
+            <div class="input-group input-group-sm">
+              <input type="email" class="form-control" placeholder="Enter your email" id="newsletterEmail">
+              <button class="btn btn-primary" type="button" onclick="subscribeNewsletter()">
+                <i class="bi bi-send"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+        
+        <nav class="footer-nav">
+          <div class="footer-nav-section">
+            <h6>Navigate</h6>
+            <a href="/" class="footer-link"><i class="bi bi-compass me-1"></i>Explore</a>
+            <a href="/dashboard" class="footer-link"><i class="bi bi-bar-chart-line me-1"></i>Dashboard</a>
+            <a href="/profile" class="footer-link"><i class="bi bi-mortarboard me-1"></i>My Learning</a>
+          </div>
+          <div class="footer-nav-section">
+            <h6>Resources</h6>
+            <a href="/resources" class="footer-link">Learning Paths</a>
+            <a href="/resources" class="footer-link">Career Guide</a>
+            <a href="/resources" class="footer-link">Skill Roadmaps</a>
+          </div>
+          <div class="footer-nav-section">
+            <h6>Community</h6>
+            <a href="/community" class="footer-link">Community</a>
+            <a href="/blog" class="footer-link">Blog</a>
+            <a href="/forums" class="footer-link">Forums</a>
+          </div>
+        </nav>
+        
+        <div class="footer-meta">
+          <div class="footer-badge">
+            <span class="badge bg-primary">Made with SkillVerse</span>
+          </div>
+          <div class="footer-details">
+            <span>Built with Node.js & Express</span>
+            <span class="footer-dot">•</span>
+            <span>trendScore = popularity + views + growth</span>
+            <span class="footer-dot">•</span>
+            <span>&copy; 2026 SkillVerse</span>
+          </div>
+          <div class="footer-credit">Developed with ❤️ by <span class="footer-author">@mash157</span></div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap JS Bundle -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

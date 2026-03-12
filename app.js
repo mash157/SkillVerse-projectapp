@@ -19,6 +19,14 @@ app.use('/api', resourcesRouter);
 app.get('/', (req, res) => res.sendFile(path.join(__dirname, 'public', 'index.html')));
 app.get('/skill', (req, res) => res.sendFile(path.join(__dirname, 'public', 'skill.html')));
 app.get('/dashboard', (req, res) => res.sendFile(path.join(__dirname, 'public', 'dashboard.html')));
+app.get('/profile', (req, res) => res.sendFile(path.join(__dirname, 'public', 'profile.html')));
+
+// New content pages
+app.get('/community', (req, res) => res.sendFile(path.join(__dirname, 'public', 'community.html')));
+app.get('/resources', (req, res) => res.sendFile(path.join(__dirname, 'public', 'resources.html')));
+app.get('/blog', (req, res) => res.sendFile(path.join(__dirname, 'public', 'blog.html')));
+app.get('/forums', (req, res) => res.sendFile(path.join(__dirname, 'public', 'forums.html')));
+app.get('/support', (req, res) => res.sendFile(path.join(__dirname, 'public', 'support.html')));
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
